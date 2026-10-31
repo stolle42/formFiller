@@ -1,0 +1,3 @@
+# LF everywhere: SKILL.md frontmatter is parsed line by line, and CRLF checkouts on Windows would end up in the ZIPs.
+* text=auto eol=lf
+*.zip binary

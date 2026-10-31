@@ -1,0 +1,464 @@
+{
+  "_comment": "Canonical field keys. 'aliases' are label texts seen on forms (any language) - matching is accent/case-insensitive. 'sensitive' fields need confirmation before being entered. 'derived' keys are computed from other keys, never stored. Users extend this via profile_store.py learn-alias / register-key.",
+  "version": 1,
+  "keys": {
+    "person.salutation": {
+      "label": "Salutation",
+      "type": "enum",
+      "aliases": [
+        "anrede",
+        "salutation",
+        "title mr mrs",
+        "herr frau"
+      ]
+    },
+    "person.academic_title": {
+      "label": "Academic title",
+      "type": "string",
+      "aliases": [
+        "titel",
+        "akademischer grad",
+        "academic title",
+        "dr",
+        "prof"
+      ]
+    },
+    "person.first_name": {
+      "label": "First name",
+      "type": "string",
+      "aliases": [
+        "vorname",
+        "first name",
+        "given name",
+        "forename",
+        "rufname"
+      ]
+    },
+    "person.middle_names": {
+      "label": "Middle name(s)",
+      "type": "string",
+      "aliases": [
+        "zweiter vorname",
+        "weitere vornamen",
+        "middle name",
+        "middle names"
+      ]
+    },
+    "person.last_name": {
+      "label": "Last name",
+      "type": "string",
+      "aliases": [
+        "name",
+        "nachname",
+        "familienname",
+        "last name",
+        "surname",
+        "family name"
+      ]
+    },
+    "person.birth_name": {
+      "label": "Birth name",
+      "type": "string",
+      "aliases": [
+        "geburtsname",
+        "birth name",
+        "maiden name",
+        "name at birth"
+      ]
+    },
+    "person.gender": {
+      "label": "Gender",
+      "type": "enum",
+      "aliases": [
+        "geschlecht",
+        "gender",
+        "sex"
+      ]
+    },
+    "person.nationality": {
+      "label": "Nationality",
+      "type": "string",
+      "aliases": [
+        "staatsangehorigkeit",
+        "nationalitat",
+        "nationality",
+        "citizenship"
+      ]
+    },
+    "person.marital_status": {
+      "label": "Marital status",
+      "type": "enum",
+      "aliases": [
+        "familienstand",
+        "marital status",
+        "civil status"
+      ]
+    },
+    "birth.date": {
+      "label": "Date of birth",
+      "type": "date",
+      "aliases": [
+        "geburtsdatum",
+        "geburtstag",
+        "date of birth",
+        "birth date",
+        "dob",
+        "birthday"
+      ]
+    },
+    "birth.place": {
+      "label": "Place of birth",
+      "type": "string",
+      "aliases": [
+        "geburtsort",
+        "place of birth",
+        "city of birth"
+      ]
+    },
+    "birth.country": {
+      "label": "Country of birth",
+      "type": "string",
+      "aliases": [
+        "geburtsland",
+        "country of birth"
+      ]
+    },
+    "address.street": {
+      "label": "Street",
+      "type": "string",
+      "aliases": [
+        "strasse",
+        "strasse und hausnummer",
+        "street",
+        "street address",
+        "address line 1",
+        "anschrift"
+      ]
+    },
+    "address.house_number": {
+      "label": "House number",
+      "type": "string",
+      "aliases": [
+        "hausnummer",
+        "house number",
+        "nr",
+        "no"
+      ]
+    },
+    "address.postal_code": {
+      "label": "Postal code",
+      "type": "string",
+      "aliases": [
+        "plz",
+        "postleitzahl",
+        "postal code",
+        "zip",
+        "zip code",
+        "postcode"
+      ]
+    },
+    "address.city": {
+      "label": "City",
+      "type": "string",
+      "aliases": [
+        "ort",
+        "stadt",
+        "wohnort",
+        "city",
+        "town"
+      ]
+    },
+    "address.country": {
+      "label": "Country",
+      "type": "string",
+      "aliases": [
+        "land",
+        "country"
+      ]
+    },
+    "address.postal_city": {
+      "label": "Postal code + city",
+      "type": "string",
+      "derived": "{address.postal_code} {address.city}",
+      "aliases": [
+        "plz ort",
+        "plz / ort",
+        "postal code city",
+        "zip city"
+      ]
+    },
+    "contact.phone_mobile": {
+      "label": "Mobile phone",
+      "type": "phone",
+      "aliases": [
+        "handynummer",
+        "mobil",
+        "mobile",
+        "mobile phone",
+        "cell",
+        "telefon handynummer",
+        "telefon / handynummer",
+        "telefonnummer",
+        "telefon",
+        "phone",
+        "phone number",
+        "tel"
+      ]
+    },
+    "contact.phone_landline": {
+      "label": "Landline phone",
+      "type": "phone",
+      "aliases": [
+        "festnetz",
+        "festnetznummer",
+        "landline",
+        "home phone"
+      ]
+    },
+    "contact.email": {
+      "label": "Email",
+      "type": "email",
+      "aliases": [
+        "e mail",
+        "e mail adresse",
+        "email",
+        "email address",
+        "mail",
+        "emailadresse"
+      ]
+    },
+    "tax.id": {
+      "label": "Tax ID (Steuer-ID)",
+      "type": "string",
+      "sensitive": true,
+      "aliases": [
+        "steueridentifikationsnummer",
+        "steuer id",
+        "steuer-id",
+        "idnr",
+        "tax identification number",
+        "tax id",
+        "tin"
+      ]
+    },
+    "tax.class": {
+      "label": "Tax class",
+      "type": "string",
+      "aliases": [
+        "steuerklasse",
+        "tax class"
+      ]
+    },
+    "tax.denomination": {
+      "label": "Religious denomination (tax)",
+      "type": "string",
+      "aliases": [
+        "konfession",
+        "religionszugehorigkeit",
+        "religion",
+        "church tax"
+      ]
+    },
+    "social_security.number": {
+      "label": "Social security number",
+      "type": "string",
+      "sensitive": true,
+      "aliases": [
+        "sozialversicherungsnummer",
+        "rentenversicherungsnummer",
+        "sv nummer",
+        "social security number",
+        "ssn"
+      ]
+    },
+    "health_insurance.name": {
+      "label": "Health insurance provider",
+      "type": "string",
+      "aliases": [
+        "gesetzliche krankenversicherung bei",
+        "krankenkasse",
+        "krankenversicherung",
+        "health insurance",
+        "health insurance provider",
+        "statutory health insurance"
+      ]
+    },
+    "health_insurance.is_private": {
+      "label": "Privately insured?",
+      "type": "bool",
+      "aliases": [
+        "privat krankenversichert",
+        "privately insured",
+        "private health insurance"
+      ]
+    },
+    "health_insurance.number": {
+      "label": "Health insurance number",
+      "type": "string",
+      "sensitive": true,
+      "aliases": [
+        "versichertennummer",
+        "krankenversicherungsnummer",
+        "insurance number"
+      ]
+    },
+    "education.school_highest": {
+      "label": "Highest school qualification",
+      "type": "enum",
+      "aliases": [
+        "hochster schulabschluss",
+        "schulabschluss",
+        "highest school qualification",
+        "school leaving certificate"
+      ]
+    },
+    "education.vocational_highest": {
+      "label": "Highest vocational/academic qualification",
+      "type": "enum",
+      "aliases": [
+        "hochster ausbildungsabschluss",
+        "berufsabschluss",
+        "ausbildungsabschluss",
+        "highest educational qualification",
+        "highest degree"
+      ]
+    },
+    "bank.name": {
+      "label": "Bank name",
+      "type": "string",
+      "aliases": [
+        "name der bank",
+        "bank",
+        "kreditinstitut",
+        "name of the bank",
+        "bank name"
+      ]
+    },
+    "bank.account_holder": {
+      "label": "Account holder",
+      "type": "string",
+      "aliases": [
+        "vollstandiger name des kontoinhabers",
+        "kontoinhaber",
+        "kontoinhaberin",
+        "account holder",
+        "name of account holder"
+      ]
+    },
+    "bank.iban": {
+      "label": "IBAN",
+      "type": "iban",
+      "sensitive": true,
+      "aliases": [
+        "iban",
+        "international bank account number"
+      ]
+    },
+    "bank.bic": {
+      "label": "BIC",
+      "type": "string",
+      "sensitive": true,
+      "aliases": [
+        "bic",
+        "swift",
+        "swift code",
+        "bic swift"
+      ]
+    },
+    "employment.other_employment": {
+      "label": "Other employment?",
+      "type": "bool",
+      "aliases": [
+        "weitere beschaftigungsverhaltnisse",
+        "nebenbeschaftigung",
+        "other employment relationships",
+        "secondary employment"
+      ]
+    },
+    "employment.has_children": {
+      "label": "Has children?",
+      "type": "bool",
+      "aliases": [
+        "kinder",
+        "hat kinder",
+        "children",
+        "elternschaft",
+        "parental status"
+      ]
+    },
+    "emergency_contact.name": {
+      "label": "Emergency contact name",
+      "type": "string",
+      "aliases": [
+        "notfallkontakt",
+        "notfallkontakt name",
+        "emergency contact"
+      ]
+    },
+    "emergency_contact.phone": {
+      "label": "Emergency contact phone",
+      "type": "phone",
+      "aliases": [
+        "notfallkontakt telefon",
+        "emergency contact phone"
+      ]
+    },
+    "tax.number": {
+      "label": "Tax number (Steuernummer)",
+      "type": "string",
+      "sensitive": true,
+      "aliases": [
+        "steuernummer",
+        "steuer nr",
+        "tax number"
+      ]
+    },
+    "identity.passport_number": {
+      "label": "Passport number",
+      "type": "string",
+      "sensitive": true,
+      "aliases": [
+        "reisepassnummer",
+        "reisepass nr",
+        "passport number",
+        "passport no",
+        "passnummer",
+        "travel document number"
+      ]
+    },
+    "identity.passport_expiry": {
+      "label": "Passport expiry date",
+      "type": "date",
+      "aliases": [
+        "reisepass gultig bis",
+        "passport expiry",
+        "passport expiry date",
+        "date of expiry"
+      ]
+    },
+    "person.full_name": {
+      "label": "Full name",
+      "type": "string",
+      "derived": "{person.first_name} {person.last_name}",
+      "aliases": [
+        "vorname name",
+        "vorname / name",
+        "vollstandiger name",
+        "full name",
+        "name vorname"
+      ]
+    },
+    "meta.date_today": {
+      "label": "Today's date",
+      "type": "date",
+      "derived": "@today",
+      "aliases": [
+        "datum",
+        "date",
+        "heutiges datum",
+        "ort datum",
+        "ort, datum"
+      ]
+    }
+  }
+}

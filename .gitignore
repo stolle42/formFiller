@@ -1,0 +1,19 @@
+# This folder can double as a personal data store (people/, field_registry.json).
+# So everything is ignored by default and only the files listed below are published.
+/*
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/LICENSE*
+!/build_zips.py
+!/skills/
+
+# Never publish personal data, even if it ends up inside an allowed folder.
+people/
+field_registry.json
+*.tmp
+
+# Build output and caches
+/dist/
+__pycache__/
+*.pyc
